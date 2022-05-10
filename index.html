@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List - Foco na meta</title>
+
+    <!--Fontes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Dancing+Script&display=swap"
+        rel="stylesheet">
+
+    <!-- 
+        font-family: 'Comfortaa', cursive;
+        font-family: 'Dancing Script', cursive; 
+        -->
+
+    <!--CSS-->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/cabecalho.css">
+
+</head>
+
+<body onload="mostraTempo();">
+    <header>
+        <div class="cabecalho_container">
+            <h1>
+                <img class="logo" src="assets/img/Logo.png" alt="Logo representando tarefas">
+            </h1>
+            <h2>Suas metas</h2>
+            <span class="cabecalho_frase">Nunca desista</span>
+
+            <section>
+                <div class="cabecalho_hora">
+                    <p>Hora e data atual</p>
+                    <div>
+                        <time id="hora">
+                        </time>
+                        <time id="min">
+                        </time>
+                        <time id="seg">
+                        </time>
+                    </div>
+
+                    <div>
+                        <time id="dia"></time>
+                        <time id="mes"></time>
+                        <time id="ano"></time>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+
+        
+    </header>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
