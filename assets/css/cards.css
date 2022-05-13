@@ -32,11 +32,12 @@
     position: absolute;
     text-align: center;
     top: -80vh;
-    left: 20vh;
+    left: 22.5vh;
     height: auto;
     width: 85vw;
-    background-color: rgb(0, 30, 128);   
+    background-color: rgb(124, 152, 243);   
     display: flex;
+    margin: 1rem auto;
     
 }
 
@@ -45,7 +46,7 @@
     box-sizing: border-box;
     margin: 1rem;
     background-color: wheat;
-    width: calc(85vw / 3 - (2rem *4));
+    width: calc(85vw / 5 - (2rem) );
     height: 30vh;
 
 }
