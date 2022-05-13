@@ -19,3 +19,33 @@
     font-size: 1.2rem;
 
 }
+
+/*__________________Cards Adicionados________________*/
+
+.cards_container{
+    position: relative;
+   
+
+}
+
+.card_linhas {
+    position: absolute;
+    text-align: center;
+    top: -80vh;
+    left: 20vh;
+    height: auto;
+    width: 85vw;
+    background-color: rgb(0, 30, 128);   
+    display: flex;
+    
+}
+
+.card_ad {
+    border-radius: 30px;
+    box-sizing: border-box;
+    margin: 1rem;
+    background-color: wheat;
+    width: calc(85vw / 3 - (2rem *4));
+    height: 30vh;
+
+}
