@@ -22,12 +22,11 @@ adTrab.addEventListener("click", function (e) {
         <input class='card_ad__tempo' type='date' name='' id=''>\
        "
     linha.appendChild(cardNovo);
-    
+
     } else {
         alert('Foque nas 5')
 
     }
-
 
 })
 

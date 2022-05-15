@@ -53,12 +53,10 @@
                 <div class="cabecalho_hora">
                     <p>Hora e data atual</p>
                     <div>
-                        <time id="hora">
-                        </time>
-                        <time id="min">
-                        </time>
-                        <time id="seg">
-                        </time>
+                        <time id="hora"></time>
+                        <time id="min"></time>
+                        <time id="seg"></time>
+
                     </div>
 
                     <div>
@@ -95,14 +93,25 @@
         <!--_______________________________CardTrabalho____________________________________________-->
         <section class="cards_container">
             <div id="card_linhas" class="card_linhas">
+                <div class="card_ad">
+                    <input id='card_ad__titulo' class='card_ad__titulo' type='text' placeholder='Meta"+metas+"'>
+                    <label for='meta'>O que você vai fazer?</label>
+                    <textarea class='card_ad__inputs' id='meta' type='text' rows='4' cols='10'
+                        placeholder='Irei...'></textarea>
+                    <label for='tempo'>Qual o prazo?</label>
 
+                    <input class='card_ad__tempo' type='date' name='' id='r-data'>
+                    <input class='card_ad__tempo' type='time' name='' id='r-hora'>
+
+                    <input class="botao" type="button" value="Começar!" id="botao" name="botao">
+
+                </div>
             </div>
-
         </section>
     </main>
-
     <script src="assets/js/tempo.js"></script>
     <script src="assets/js/cards.js"></script>
+    <script src="assets/js/contagem-regressova.js"></script>
 </body>
 
 </html>
