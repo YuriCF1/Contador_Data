@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="assets/css/cards.css">
 
     <script src="https://kit.fontawesome.com/9eaf1d90d0.js" crossorigin="anonymous"></script>
+    
 
 </head>
 
@@ -93,25 +94,33 @@
         <!--_______________________________CardTrabalho____________________________________________-->
         <section class="cards_container">
             <div id="card_linhas" class="card_linhas">
-                <div class="card_ad">
-                    <input id='card_ad__titulo' class='card_ad__titulo' type='text' placeholder='Meta"+metas+"'>
+                <form class="card_ad">
+                    <input id='card_ad__titulo' class='card_ad__titulo' type='text' placeholder='Metas"'>
                     <label for='meta'>O que você vai fazer?</label>
                     <textarea class='card_ad__inputs' id='meta' type='text' rows='4' cols='10'
                         placeholder='Irei...'></textarea>
                     <label for='tempo'>Qual o prazo?</label>
 
-                    <input class='card_ad__tempo' type='date' name='' id='r-data'>
-                    <input class='card_ad__tempo' type='time' name='' id='r-hora'>
+                    <input class='card_ad__tempo' type='datetime-local' name='' id='r-data'>
 
-                    <input class="botao" type="button" value="Começar!" id="botao" name="botao">
+                    <input class="botao" type="submit" value="Começar!" id="botao" name="botao">
 
-                </div>
+                    <div>
+                        <time id="f_dias"></time>
+                        <time id="f_horas"></time>
+                        <time id="f_minutos"></time>
+                        <time id="f_segundos"></time>                    
+
+                    </div>
+
+                </form>
             </div>
         </section>
     </main>
     <script src="assets/js/tempo.js"></script>
     <script src="assets/js/cards.js"></script>
-    <script src="assets/js/contagem-regressova.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="assets/js/contagem-regressiva.js"></script>
 </body>
 
 </html>
