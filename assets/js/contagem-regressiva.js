@@ -91,6 +91,7 @@ botao.addEventListener('click', function (e) {
 
     e.preventDefault();
     const diaDado = document.getElementById('r-data');
+    
     const minuteG = 1000 * 60;
     const hourG = minuteG * 60;
     const dayG = hourG * 24;
@@ -103,7 +104,12 @@ botao.addEventListener('click', function (e) {
     //const horaRecebida = dataRecebida.getHours();
     //const minutoRecebida = dataRecebida.getMinutes();
     
-    //const dataCorrigida = new Date(dataRecebida.getUTCFullYear(), dataRecebida.getUTCMonth(),dataRecebida.getUTCDate());
+    // const dataCorrigida = new Date(dataRecebida.getUTCFullYear(), dataRecebida.getUTCMonth(),dataRecebida.getUTCDate());
+
+
+    // toTimeString                                       ////////////////
+    // reservar cada elemento em uma variável e subtrair. ///////////////
+
 
     const dataTempo = dataRecebida.getTime();
     //const horaTempo = horaRecebida.getTime();
@@ -112,7 +118,7 @@ botao.addEventListener('click', function (e) {
     //let diferencaHora = horaTempo - diaTempo;
 
     let diasF = (diferenca / (dayG));
-    let horasF = (diferenca / dayG) - (diferenca / (hourG));
+    let horasF = (diferenca) - (diasF * 1000 * 60 * 60 * 24);
     let minutosF = (horasF / (minuteG));
 
     let diasFm = Math.floor(diasF);
@@ -127,7 +133,7 @@ botao.addEventListener('click', function (e) {
 
     console.log(dataRecebida)
     //console.log(horaRecebida)
-    // console.log(diaAgora)
+    console.log(diaAgora)
     console.log(diasF)
     console.log(horasF)
     console.log(minutosF)
