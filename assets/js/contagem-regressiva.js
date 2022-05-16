@@ -85,8 +85,9 @@ const contagem = document.getElementById('contagem');
 
 botao.addEventListener('click', function (e) {
     const diaMostrado = document.getElementById('f_dias');
-    // const horaMostrado = document.getElementById('r-hora');
-
+    const horaMostrado = document.getElementById('f_horas');
+    const minutoMostrado = document.getElementById('f_minutos');
+    
 
     e.preventDefault();
     const diaDado = document.getElementById('r-data');
@@ -99,25 +100,37 @@ botao.addEventListener('click', function (e) {
     const diaTempo = diaAgora.getTime();
 
     const dataRecebida = new Date(diaDado.value)
-    const dataCorrigida = new Date(dataRecebida.getUTCFullYear(), dataRecebida.getUTCMonth(),dataRecebida.getUTCDate());
+    //const horaRecebida = dataRecebida.getHours();
+    //const minutoRecebida = dataRecebida.getMinutes();
+    
+    //const dataCorrigida = new Date(dataRecebida.getUTCFullYear(), dataRecebida.getUTCMonth(),dataRecebida.getUTCDate());
 
-    const dataTempo = dataCorrigida.getTime();
+    const dataTempo = dataRecebida.getTime();
+    //const horaTempo = horaRecebida.getTime();
     
     let diferenca = dataTempo - diaTempo;
+    //let diferencaHora = horaTempo - diaTempo;
 
-    let diasF = Math.round(diferenca / (dayG));
+    let diasF = (diferenca / (dayG));
+    let horasF = (diferenca / dayG) - (diferenca / (hourG));
+    let minutosF = (horasF / (minuteG));
+
+    let diasFm = Math.floor(diasF);
+    let horasFm =  Math.floor(horasF);
+    let minutosm = Math.floor(minutosF);
     // let horasF = Math.round(diferenca / (hourG));
 
 
-
-    diaMostrado.innerHTML = diasF;
-    // horaMostrado.innerHTML = horasF;
+    diaMostrado.innerHTML = diasFm;
+    horaMostrado.innerHTML = horasFm;
+    minutoMostrado.innerHTML = minutosm;
 
     console.log(dataRecebida)
+    //console.log(horaRecebida)
     // console.log(diaAgora)
-    // console.log(diaTempo)
-    // console.log(dataRecebida)
-    // console.log(dataCorrigida)
+    console.log(diasF)
+    console.log(horasF)
+    console.log(minutosF)
     // console.log('Milis')
     // console.log(diferenca)
     // console.log(diasF)
