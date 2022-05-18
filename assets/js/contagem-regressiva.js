@@ -101,6 +101,27 @@ botao.addEventListener('click', function (e) {
     const diaTempo = diaAgora.getTime();
 
     const dataRecebida = new Date(diaDado.value)
+
+    const novoDiaString = new Date(dataRecebida.toTimeString())
+    const novoDiaGets = new Date(dataRecebida.getUTCFullYear(), dataRecebida.getUTCMonth(),
+        dataRecebida.getUTCDate(), dataRecebida.getUTCHours() -3, dataRecebida.getUTCMinutes(), dataRecebida.getUTCSeconds())
+
+    const dataClic = new Date(diaAgora.getUTCFullYear(), diaAgora.getUTCMonth(),
+    diaAgora.getUTCDate(), diaAgora.getUTCHours() -3, diaAgora.getUTCMinutes(), diaAgora.getUTCSeconds())
+
+    const resultado = novoDiaGets - dataClic;
+
+    const resulDia = resultado / dayG;
+    const resulHora = (resultado / hourG) - (Math.floor(resulDia) * 24) ;
+    const resulMin = (resultado / minuteG);
+
+    
+    const resulDiaM = Math.floor(resultado / dayG);
+    const resulHoraM = Math.floor((resultado / hourG) - (Math.floor(resulDia) * 24)) ;
+    const resulMinM = Math.floor((resultado / hourG) - (Math.floor(resulDia) * 1440)) ;
+
+
+
     //const horaRecebida = dataRecebida.getHours();
     //const minutoRecebida = dataRecebida.getMinutes();
     
@@ -118,7 +139,7 @@ botao.addEventListener('click', function (e) {
     //let diferencaHora = horaTempo - diaTempo;
 
     let diasF = (diferenca / (dayG));
-    let horasF = (diferenca) - (diasF * 1000 * 60 * 60 * 24);
+    let horasF = (diferenca) - (diferenca / hourG);
     let minutosF = (horasF / (minuteG));
 
     let diasFm = Math.floor(diasF);
@@ -127,16 +148,27 @@ botao.addEventListener('click', function (e) {
     // let horasF = Math.round(diferenca / (hourG));
 
 
-    diaMostrado.innerHTML = diasFm;
-    horaMostrado.innerHTML = horasFm;
-    minutoMostrado.innerHTML = minutosm;
+    diaMostrado.innerHTML = resulDiaM;
+    horaMostrado.innerHTML = resulHoraM;
+    minutoMostrado.innerHTML = resulMin;
 
-    console.log(dataRecebida)
-    //console.log(horaRecebida)
-    console.log(diaAgora)
-    console.log(diasF)
-    console.log(horasF)
-    console.log(minutosF)
+    // console.log(dataRecebida)
+    // console.log(horaRecebida)
+    // console.log(diaAgora)
+    // console.log(diasF)
+    // console.log(horasF)
+    // console.log(minutosF)
+    
+    //console.log(novoDiaString)
+
+    // console.log(novoDiaGets)
+    // console.log(dataClic)
+    // console.log(resultado)
+    console.log(resulDia)
+    console.log(resulHora)
+    console.log(resulMin)
+
+
     // console.log('Milis')
     // console.log(diferenca)
     // console.log(diasF)
