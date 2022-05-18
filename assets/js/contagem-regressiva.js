@@ -1,7 +1,7 @@
 const botao = document.getElementById('botao');
 const contagem = document.getElementById('contagem');
 
-// //_______________________________________________________________
+// //______________________________Soluaçõ encontrada_________________________________
 
 botao.addEventListener('click', function (e) {
     //Id para o innerHTML
@@ -11,131 +11,184 @@ botao.addEventListener('click', function (e) {
     const segundoMostrado = document.getElementById('f_segundos');
     
     
-    e.preventDefault(); //Já que é um forms, aqui evita o recarregamento da página
+    e.preventDefault(); //Já que é um forms com type submit, aqui evita o recarregamento da página
     const diaDado = document.getElementById('r-data'); //Input dado
-
+    
     const diaAgora = new Date(); //Data do click
     const dataRecebida = new Date(diaDado.value);
-
+    
     //Separando as grandezas do input
     const diaGet= new Date(dataRecebida.getUTCDate());
-    const horaGet = new Date(dataRecebida.getUTCHours() -3);
+    const horaGet = new Date(dataRecebida.getUTCHours() -3); //UTC brasilia GMT -3
     const minGet= new Date(dataRecebida.getUTCMinutes());
     const segGet= new Date(dataRecebida.getUTCSeconds());
-
+    
     //Separando as grandezas do momento do click
     const diaClik = new Date(diaAgora.getUTCDate());
     const horaCliK = new Date(diaAgora.getUTCHours() -3);
     const minCliK= new Date(diaAgora.getUTCMinutes());
     const segCliK= new Date(diaAgora.getUTCSeconds());
-
+    
+    
     //Diferença
-    const faltaDia = diaGet - diaClik;
-    const faltaHora = horaGet - horaCliK;
-    const faltaMin = minGet - minCliK;
-    const faltaSeg = segCliK - segGet;
+    let faltaDia = diaGet - diaClik;
+    let faltaHora = horaGet - horaCliK;
+    let faltaMin = minGet - minCliK;
+    let faltaSeg = segCliK - segGet;
+    
+    //Secao teste
+    // let faltaDia = 0;
+    // let faltaHora = 0;
+    // let faltaMin = 0;
+    // let faltaSeg = 2;
 
+    //Loop regressivo
+    let contagem;
+    regressivaInicio();
+    function regressivaInicio() {
+       contagem = setInterval(regressiva, 1000);
+    }
+    
+    //Condicoes regressivo
+    function regressiva() {
+    
+    if (faltaSeg > 0) {
+        faltaSeg -= 1;
+        
+    } else if (faltaSeg == 0 && faltaMin > 0 && faltaMin <= 59) {
+        faltaMin -= 1;
+        faltaSeg = 59;
+
+    } else if (faltaSeg == 0 && faltaMin == 0 && faltaHora >0) {
+        faltaHora -= 1;
+        faltaMin = 59;
+        faltaSeg = 59;
+
+
+    } else if (faltaSeg == 0 && faltaMin == 0 && faltaHora == 0 && faltaDia >0) {
+        faltaDia -= 1;
+        faltaHora = 23;
+        faltaMin = 59;
+        faltaSeg = 59;
+
+    } else if (faltaSeg == 0 && faltaMin == 0 && faltaHora == 0 && faltaDia == 0) {
+        alert('Cabou poha!')
+        clearInterval(contagem);
+
+    } 
+    
     //Atribuição no HTML
-    // diaMostrado.innerHTML = faltaDia;
-    // horaMostrado.innerHTML = faltaHora;
-    // minutoMostrado.innerHTML = faltaMin;
-    // segundoMostrado.innerHTML = faltaSeg;
+    diaMostrado.innerHTML = faltaDia;
+    horaMostrado.innerHTML = faltaHora;
+    minutoMostrado.innerHTML = faltaMin;
+    segundoMostrado.innerHTML = faltaSeg;
+}
+
+}, true)
 
 
-    function mostraDia() {
-        let hora = data.getHours();
-    
-        if (hora < 10) {
-             hora = "0" + hora;
-         }
+//________________________________________________________Terminto da solução____________________________________________________
+
+
+
+
+
+
+//___________________________________________________CASOS DE ESTUDO ESTUDOS FUTUROS______________________________________________
+    // function mostraDia() {
+    //     let hora = data.getHours();
         
-         let tempoAtual = hora;
+    //     if (hora < 10) {
+    //         hora = "0" + hora;
+    //      }
+        
+    //      let tempoAtual = hora;
+         
+    //      diaMostrado.innerHTML = faltaDia;;
+         
+    //     }
+        
+    //     function mostraMinuto() {
+    //     let data = new Date()
+    //     let min = data.getMinutes();
+        
+    //     if (min < 10) {
+    //         min = "0" + min;
+    //     }
+        
+    //     let tempoAtual = min;
+        
+    //     document.getElementById("min").innerHTML= tempoAtual;
+        
+    // }
+    // function mostraSegundo() {
+    //     let data = new Date();
+    //     let seg = data.getSeconds();
+        
+    //     if (seg < 10) {
+    //         seg = "0" + seg;
+    //     }
     
-         diaMostrado.innerHTML = faltaDia;;
+    //     let tempoAtual = seg
     
-    }
+    //     document.getElementById("seg").innerHTML= tempoAtual;
     
-    function mostraMinuto() {
-        let data = new Date()
-        let min = data.getMinutes();
+    // }
     
-         if (min < 10) {
-            min = "0" + min;
-        }
+    // //_____________________________DIA______________________________
+    // function mostraData() {
+    //     let dataAtual = data.getDate(); //getDay = Dia da semana
     
-        let tempoAtual = min;
-    
-        document.getElementById("min").innerHTML= tempoAtual;
-    
-    }
-    function mostraSegundo() {
-        let data = new Date();
-        let seg = data.getSeconds();
-    
-        if (seg < 10) {
-            seg = "0" + seg;
-        }
-    
-        let tempoAtual = seg
-    
-        document.getElementById("seg").innerHTML= tempoAtual;
-    
-    }
-    
-    //_____________________________DIA______________________________
-    function mostraData() {
-        let dataAtual = data.getDate(); //getDay = Dia da semana
-    
-        if (dataAtual < 10) {
-            dataAtual = "0" + dataAtual;
-        }
+    //     if (dataAtual < 10) {
+    //         dataAtual = "0" + dataAtual;
+    //     }
        
-        let dataMostrada = dataAtual;
+    //     let dataMostrada = dataAtual;
     
-       document.getElementById("dia").innerHTML= dataMostrada;
+    //    document.getElementById("dia").innerHTML= dataMostrada;
     
-    }
+    // }
     
-    function mostraMes() {
-        let mesAtual = data.getMonth() + 1; //Os meses começam com 0 em janeiro
+    // function mostraMes() {
+    //     let mesAtual = data.getMonth() + 1; //Os meses começam com 0 em janeiro
     
-        if (mesAtual < 10) {
-            mesAtual = "0" + mesAtual;
-        }
+    //     if (mesAtual < 10) {
+    //         mesAtual = "0" + mesAtual;
+    //     }
        
-        let mesMostrado = mesAtual;
+    //     let mesMostrado = mesAtual;
     
-       document.getElementById("mes").innerHTML= mesMostrado;
+    //    document.getElementById("mes").innerHTML= mesMostrado;
     
-    }
+    // }
     
-    function mostraAno() {
-        let anoAtual = data.getUTCFullYear();
+    // function mostraAno() {
+    //     let anoAtual = data.getUTCFullYear();
     
-        if (anoAtual < 10) {
-            anoAtual = "0" + anoAtual;
-        }
+    //     if (anoAtual < 10) {
+    //         anoAtual = "0" + anoAtual;
+    //     }
        
-        let anoMostrado = anoAtual;
+    //     let anoMostrado = anoAtual;
     
-       document.getElementById("ano").innerHTML= anoMostrado;
+    //    document.getElementById("ano").innerHTML= anoMostrado;
     
-    }
-    
-    
+    // }
     
     
-    function mostraTempo() {
-        setInterval(mostraHora, 1000);
-        setInterval(mostraMinuto, 1000);
-        setInterval(mostraSegundo, 1000);
     
-        setInterval(mostraData, 1000);
-        setInterval(mostraMes, 1000);
-        setInterval(mostraAno, 1000);
+    
+    // function mostraTempo() {
+    //     setInterval(mostraHora, 1000);
+    //     setInterval(mostraMinuto, 1000);
+    //     setInterval(mostraSegundo, 1000);
+    
+    //     setInterval(mostraData, 1000);
+    //     setInterval(mostraMes, 1000);
+    //     setInterval(mostraAno, 1000);
         
     
-    }
+    // }
 
 
 
@@ -145,7 +198,6 @@ botao.addEventListener('click', function (e) {
 
 
 
-})
 
 // const faltaDia = document.getElementById('faltaDia');
 // const faltaHora = document.getElementById('faltaHora');
@@ -322,15 +374,6 @@ botao.addEventListener('click', function (e) {
     // console.log(resulHora)
     // console.log(resulMin)
 
-
-  
-  
-    
-    
-    
-    
-    
-    
     
     // const diaDado = document.getElementById('r-data').value;
 
