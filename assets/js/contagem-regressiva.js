@@ -2,6 +2,151 @@ const botao = document.getElementById('botao');
 const contagem = document.getElementById('contagem');
 
 // //_______________________________________________________________
+
+botao.addEventListener('click', function (e) {
+    //Id para o innerHTML
+    const diaMostrado = document.getElementById('f_dias');
+    const horaMostrado = document.getElementById('f_horas');
+    const minutoMostrado = document.getElementById('f_minutos');
+    const segundoMostrado = document.getElementById('f_segundos');
+    
+    
+    e.preventDefault(); //Já que é um forms, aqui evita o recarregamento da página
+    const diaDado = document.getElementById('r-data'); //Input dado
+
+    const diaAgora = new Date(); //Data do click
+    const dataRecebida = new Date(diaDado.value);
+
+    //Separando as grandezas do input
+    const diaGet= new Date(dataRecebida.getUTCDate());
+    const horaGet = new Date(dataRecebida.getUTCHours() -3);
+    const minGet= new Date(dataRecebida.getUTCMinutes());
+    const segGet= new Date(dataRecebida.getUTCSeconds());
+
+    //Separando as grandezas do momento do click
+    const diaClik = new Date(diaAgora.getUTCDate());
+    const horaCliK = new Date(diaAgora.getUTCHours() -3);
+    const minCliK= new Date(diaAgora.getUTCMinutes());
+    const segCliK= new Date(diaAgora.getUTCSeconds());
+
+    //Diferença
+    const faltaDia = diaGet - diaClik;
+    const faltaHora = horaGet - horaCliK;
+    const faltaMin = minGet - minCliK;
+    const faltaSeg = segCliK - segGet;
+
+    //Atribuição no HTML
+    // diaMostrado.innerHTML = faltaDia;
+    // horaMostrado.innerHTML = faltaHora;
+    // minutoMostrado.innerHTML = faltaMin;
+    // segundoMostrado.innerHTML = faltaSeg;
+
+
+    function mostraDia() {
+        let hora = data.getHours();
+    
+        if (hora < 10) {
+             hora = "0" + hora;
+         }
+        
+         let tempoAtual = hora;
+    
+         diaMostrado.innerHTML = faltaDia;;
+    
+    }
+    
+    function mostraMinuto() {
+        let data = new Date()
+        let min = data.getMinutes();
+    
+         if (min < 10) {
+            min = "0" + min;
+        }
+    
+        let tempoAtual = min;
+    
+        document.getElementById("min").innerHTML= tempoAtual;
+    
+    }
+    function mostraSegundo() {
+        let data = new Date();
+        let seg = data.getSeconds();
+    
+        if (seg < 10) {
+            seg = "0" + seg;
+        }
+    
+        let tempoAtual = seg
+    
+        document.getElementById("seg").innerHTML= tempoAtual;
+    
+    }
+    
+    //_____________________________DIA______________________________
+    function mostraData() {
+        let dataAtual = data.getDate(); //getDay = Dia da semana
+    
+        if (dataAtual < 10) {
+            dataAtual = "0" + dataAtual;
+        }
+       
+        let dataMostrada = dataAtual;
+    
+       document.getElementById("dia").innerHTML= dataMostrada;
+    
+    }
+    
+    function mostraMes() {
+        let mesAtual = data.getMonth() + 1; //Os meses começam com 0 em janeiro
+    
+        if (mesAtual < 10) {
+            mesAtual = "0" + mesAtual;
+        }
+       
+        let mesMostrado = mesAtual;
+    
+       document.getElementById("mes").innerHTML= mesMostrado;
+    
+    }
+    
+    function mostraAno() {
+        let anoAtual = data.getUTCFullYear();
+    
+        if (anoAtual < 10) {
+            anoAtual = "0" + anoAtual;
+        }
+       
+        let anoMostrado = anoAtual;
+    
+       document.getElementById("ano").innerHTML= anoMostrado;
+    
+    }
+    
+    
+    
+    
+    function mostraTempo() {
+        setInterval(mostraHora, 1000);
+        setInterval(mostraMinuto, 1000);
+        setInterval(mostraSegundo, 1000);
+    
+        setInterval(mostraData, 1000);
+        setInterval(mostraMes, 1000);
+        setInterval(mostraAno, 1000);
+        
+    
+    }
+
+
+
+
+
+
+
+
+
+})
+
 // const faltaDia = document.getElementById('faltaDia');
 // const faltaHora = document.getElementById('faltaHora');
 
@@ -35,7 +180,7 @@ const contagem = document.getElementById('contagem');
 
 
 
-
+//___________________________Metodo de estudo________________________________________
 // botao.addEventListener('click', function (e) {
 //     const diaDado = document.getElementById('r-data').value;
 //     const horaDada = document.getElementById('r-hora').getHours;
@@ -68,10 +213,6 @@ const contagem = document.getElementById('contagem');
 // })
 
 
-
-
-
-
 // //aqui vai sempre ser a hora atual
 // var dataAtual = new Date();
 // //como exemplo vou definir a data de fim com base na data atual
@@ -81,44 +222,58 @@ const contagem = document.getElementById('contagem');
 
 
 
+// ___________________________________________ Metodo por Getime_________________________________
+    // const minuteG = 1000 * 60;
+    // const hourG = minuteG * 60;
+    // const dayG = hourG * 24;
+    // const yearG = dayG * 365;
+    
+    
+    // const diaTempo = diaAgora.getTime();
 
 
-botao.addEventListener('click', function (e) {
-    const diaMostrado = document.getElementById('f_dias');
-    const horaMostrado = document.getElementById('f_horas');
-    const minutoMostrado = document.getElementById('f_minutos');
+    // const novoDiaGets = new Date(dataRecebida.getUTCFullYear(), dataRecebida.getUTCMonth(),
+    //     dataRecebida.getUTCDate(), dataRecebida.getUTCHours() -3, dataRecebida.getUTCMinutes(), dataRecebida.getUTCSeconds())
+
+    // const dataClic = new Date(diaAgora.getUTCFullYear(), diaAgora.getUTCMonth(),
+    // diaAgora.getUTCDate(), diaAgora.getUTCHours() -3, diaAgora.getUTCMinutes(), diaAgora.getUTCSeconds())
+
+    // const resultado = novoDiaGets - dataClic;
+
+    // const resulDia = resultado / dayG;
+    // const resulHora = (resultado / hourG) - (Math.floor(resulDia) * 24) ;
+    // const resulMin = (resultado / minuteG);
     
 
-    e.preventDefault();
-    const diaDado = document.getElementById('r-data');
     
-    const minuteG = 1000 * 60;
-    const hourG = minuteG * 60;
-    const dayG = hourG * 24;
-    const yearG = dayG * 365;
+    // const resulDiaM = Math.floor(resultado / dayG);
+    // const resulHoraM = Math.floor((resultado / hourG) - (Math.floor(resulDia) * 24)) ;
+    // const resulMinM = Math.floor((resultado / hourG) - (Math.floor(resulDia) * 1440)) ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
-    const diaAgora = new Date();
-    const diaTempo = diaAgora.getTime();
-
-    const dataRecebida = new Date(diaDado.value)
-
-    const novoDiaString = new Date(dataRecebida.toTimeString())
-    const novoDiaGets = new Date(dataRecebida.getUTCFullYear(), dataRecebida.getUTCMonth(),
-        dataRecebida.getUTCDate(), dataRecebida.getUTCHours() -3, dataRecebida.getUTCMinutes(), dataRecebida.getUTCSeconds())
-
-    const dataClic = new Date(diaAgora.getUTCFullYear(), diaAgora.getUTCMonth(),
-    diaAgora.getUTCDate(), diaAgora.getUTCHours() -3, diaAgora.getUTCMinutes(), diaAgora.getUTCSeconds())
-
-    const resultado = novoDiaGets - dataClic;
-
-    const resulDia = resultado / dayG;
-    const resulHora = (resultado / hourG) - (Math.floor(resulDia) * 24) ;
-    const resulMin = (resultado / minuteG);
-
-    
-    const resulDiaM = Math.floor(resultado / dayG);
-    const resulHoraM = Math.floor((resultado / hourG) - (Math.floor(resulDia) * 24)) ;
-    const resulMinM = Math.floor((resultado / hourG) - (Math.floor(resulDia) * 1440)) ;
 
 
 
@@ -132,25 +287,23 @@ botao.addEventListener('click', function (e) {
     // reservar cada elemento em uma variável e subtrair. ///////////////
 
 
-    const dataTempo = dataRecebida.getTime();
-    //const horaTempo = horaRecebida.getTime();
+    // const dataTempo = dataRecebida.getTime();
+    // const horaTempo = horaRecebida.getTime();
     
-    let diferenca = dataTempo - diaTempo;
-    //let diferencaHora = horaTempo - diaTempo;
+    // let diferenca = dataTempo - diaTempo;
+    // let diferencaHora = horaTempo - diaTempo;
 
-    let diasF = (diferenca / (dayG));
-    let horasF = (diferenca) - (diferenca / hourG);
-    let minutosF = (horasF / (minuteG));
+    // let diasF = (diferenca / (dayG));
+    // let horasF = (diferenca) - (diferenca / hourG);
+    // let minutosF = (horasF / (minuteG));
 
-    let diasFm = Math.floor(diasF);
-    let horasFm =  Math.floor(horasF);
-    let minutosm = Math.floor(minutosF);
+    // let diasFm = Math.floor(diasF);
+    // let horasFm =  Math.floor(horasF);
+    // let minutosm = Math.floor(minutosF);
     // let horasF = Math.round(diferenca / (hourG));
 
 
-    diaMostrado.innerHTML = resulDiaM;
-    horaMostrado.innerHTML = resulHoraM;
-    minutoMostrado.innerHTML = resulMin;
+    
 
     // console.log(dataRecebida)
     // console.log(horaRecebida)
@@ -159,20 +312,18 @@ botao.addEventListener('click', function (e) {
     // console.log(horasF)
     // console.log(minutosF)
     
-    //console.log(novoDiaString)
+    // console.log(novoDiaString)
 
     // console.log(novoDiaGets)
     // console.log(dataClic)
     // console.log(resultado)
-    console.log(resulDia)
-    console.log(resulHora)
-    console.log(resulMin)
+
+    // console.log(resulDia)
+    // console.log(resulHora)
+    // console.log(resulMin)
 
 
-    // console.log('Milis')
-    // console.log(diferenca)
-    // console.log(diasF)
-   
+  
   
     
     
@@ -243,4 +394,3 @@ botao.addEventListener('click', function (e) {
 
 
 
-})
