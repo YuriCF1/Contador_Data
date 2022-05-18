@@ -72,7 +72,7 @@ botao.addEventListener('click', function (e) {
         faltaSeg = 59;
 
     } else if (faltaSeg == 0 && faltaMin == 0 && faltaHora == 0 && faltaDia == 0) {
-        alert('Cabou poha!')
+        alert('Acabou!')
         clearInterval(contagem);
 
     } 
