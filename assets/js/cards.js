@@ -9,7 +9,7 @@ let metas = 0;
 adTrab.addEventListener("click", function (e) {
     inicio.style.display = 'none';
 
-    const cardNovo = document.createElement("div"); // Cria um novo elemento <>
+    const cardNovo = document.createElement("form"); // Cria um novo elemento <>
     cardNovo.className = "card_ad"; // Define o atributo de identificação HTML
 
     if (metas < 5) {
@@ -36,4 +36,6 @@ adTrab.addEventListener("click", function (e) {
     }
 
 })
+
+
 
