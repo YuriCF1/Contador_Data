@@ -9,8 +9,7 @@ botao.addEventListener('click', function (e) {
     const horaMostrado = document.getElementById('f_horas');
     const minutoMostrado = document.getElementById('f_minutos');
     const segundoMostrado = document.getElementById('f_segundos');
-    
-    
+
     e.preventDefault(); //Já que é um forms com type submit, aqui evita o recarregamento da página
     const diaDado = document.getElementById('r-data'); //Input dado
     
@@ -18,20 +17,18 @@ botao.addEventListener('click', function (e) {
     const dataRecebida = new Date(diaDado.value);
     
     //Separando as grandezas do input
-    const diaGet= new Date(dataRecebida.getUTCDate());
-    const horaGet = new Date(dataRecebida.getUTCHours()); //UTC brasilia GMT -3
+        // const diaGet= new Date(dataRecebida.getUTCDate());
+        // const horaGet = new Date(dataRecebida.getUTCHours());
     const minGet= new Date(dataRecebida.getUTCMinutes());
     const segGet= new Date(dataRecebida.getUTCSeconds());
     
     //Separando as grandezas do momento do click
-    const diaClik = new Date(diaAgora.getUTCDate());
-    const horaCliK = new Date(diaAgora.getUTCHours());
+        // const diaClik = new Date(diaAgora.getUTCDate());
+        // const horaCliK = new Date(diaAgora.getUTCHours());
     const minCliK= new Date(diaAgora.getUTCMinutes());
     const segCliK= new Date(diaAgora.getUTCSeconds());
-
-    const diaAgoraT = new Date(diaAgora.getUTCFullYear(), diaAgora.getUTCMonth(), diaAgora.getUTCDate(), diaAgora.getUTCHours());
-    const dataRecebidaT = new Date(dataRecebida.getUTCFullYear(), dataRecebida.getUTCMonth(), dataRecebida.getUTCDate());
     
+    // Transformando grandezas em unidades de milisegundo
     const segundoG = 1000
     const minuteG = segundoG * 60;
     const hourG = minuteG * 60;
@@ -39,21 +36,26 @@ botao.addEventListener('click', function (e) {
     const yearG = dayG * 365;
     
     
-    //Diferença
+    //Diferença da data de agora e data atual
     let faltaTotal = dataRecebida - diaAgora;
 
     let faltDiaM = Math.floor( faltaTotal / dayG);
     let faltHoraM = Math.floor( faltaTotal / hourG) - (24 * faltDiaM);
-    
+
     let faltaMin = (minGet - minCliK) - 1;
     let faltaSeg = 60 - ((segGet - segCliK) * -1);
 
     if (faltaMin < 0 ) {
-        faltaMin  = faltaMin + 60;
+        faltaMin  += 60;
 
     }
 
-    
+    if (faltDiaM <0 ) {
+        faltDiaM = 0
+
+    }
+
+
     // let minDif = faltDiaM * 24 * 60 * 60 * 1000;
     // let faltMinM = Math.floor(faltaTotal / minuteG);
 
@@ -69,54 +71,55 @@ botao.addEventListener('click', function (e) {
     // let faltaSeg = 2;
     
     // Loop regressivo
-        let contagem;
-        regressivaInicio();
+    
+    let contagem;
+
+    regressivaInicio();
+
         function regressivaInicio() {
                contagem = setInterval(regressiva, 1000);
+               
             }
         
-            //Condicoes regressivo
-            function regressiva() {
-            
-    if (faltaSeg > 0) {
-        faltaSeg -= 1;
-        
-        } else if (faltaSeg == 0 && faltaMin > 0 && faltaMin <= 59) {
-            faltaMin -= 1;
-            faltaSeg = 59;
+        //Condicoes regressivo
+        function regressiva() {
+                
+            if (faltaSeg > 0) {
+                faltaSeg -= 1;
+                
+                } else if (faltaSeg == 0 && faltaMin > 0 && faltaMin <= 59) {
+                    faltaMin -= 1;
+                    faltaSeg = 59;
 
-        } else if (faltaSeg == 0 && faltaMin == 0 && faltHoraM >0) {
-                faltHoraM -= 1;
-                faltaMin = 59;
-                faltaSeg = 59;
-        
-        
-        } else if (faltaSeg == 0 && faltaMin == 0 && faltHoraM == 0 && faltDiaM >0) {
+                } else if (faltaSeg == 0 && faltaMin == 0 && faltHoraM >0) {
+                    faltHoraM -= 1;
+                    faltaMin = 59;
+                    faltaSeg = 59;
+                
+                
+                } else if (faltaSeg == 0 && faltaMin == 0 && faltHoraM == 0 && faltDiaM >0) {
                     faltDiaM -= 1;
                     faltHoraM = 23;
                     faltaMin = 59;
                     faltaSeg = 59;
+                    
+                } else if (faltaSeg == 0 && faltaMin == 0 && faltHoraM == 0 && faltDiaM == 0) {
+                    alert('Acabou!')
+                    clearInterval(contagem);
             
-        } else if (faltaSeg == 0 && faltaMin == 0 && faltHoraM == 0 && faltDiaM == 0) {
-                        alert('Acabou!')
-                        clearInterval(contagem);
-                
-        } 
+                } 
+                //Atribuição no HTML
+                diaMostrado.innerHTML = faltDiaM;
+                horaMostrado.innerHTML = faltHoraM;
+                minutoMostrado.innerHTML = faltaMin;
+                segundoMostrado.innerHTML = faltaSeg;
+                    
+            }
             
-    }
             
-            
-            //Atribuição no HTML
+}, true)
 
-            diaMostrado.innerHTML = faltDiaM;
-            horaMostrado.innerHTML = faltHoraM;
-            minutoMostrado.innerHTML = faltaMin;
-            segundoMostrado.innerHTML = faltaSeg;
-            
-        }, true)
-
-
-    //________________________________________________________Terminto da solução____________________________________________________
+//________________________________________________________Terminto da solução____________________________________________________
     
         
         

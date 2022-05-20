@@ -26,7 +26,7 @@ adTrab.addEventListener("click", function (e) {
                         <time id='f_horas'></time>\
                         <time id='f_minutos'></time>\
                         <time id='f_segundos'></time>\
-                    </div>\
+                        </div>\
        "
     linha.appendChild(cardNovo);
 
