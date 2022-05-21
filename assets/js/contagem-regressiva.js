@@ -334,32 +334,7 @@ botao.addEventListener('click', function (e) {
     // const resulHoraM = Math.floor((resultado / hourG) - (Math.floor(resulDia) * 24)) ;
     // const resulMinM = Math.floor((resultado / hourG) - (Math.floor(resulDia) * 1440)) ;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
+//________________________________________________________________________________________________
 
     //const horaRecebida = dataRecebida.getHours();
     //const minutoRecebida = dataRecebida.getMinutes();
