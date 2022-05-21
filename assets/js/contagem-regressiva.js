@@ -1,20 +1,30 @@
 const botao = document.getElementById('botao');
 const contagem = document.getElementById('contagem');
 
-// //______________________________Soluaçõ encontrada_________________________________
+// //______________________________Soluação encontrada_________________________________
 
-botao.addEventListener('click', function (e) {
-    //Id para o innerHTML
-    const diaMostrado = document.getElementById('f_dias');
-    const horaMostrado = document.getElementById('f_horas');
-    const minutoMostrado = document.getElementById('f_minutos');
-    const segundoMostrado = document.getElementById('f_segundos');
+function comeca() {
 
+    botao.addEventListener('click', function (e) {
     e.preventDefault(); //Já que é um forms com type submit, aqui evita o recarregamento da página
+    //Id para o innerHTML
+    // const diaMostrado = document.getElementById('f_dias');
+    // const horaMostrado = document.getElementById('f_horas');
+    // const minutoMostrado = document.getElementById('f_minutos');
+    // const segundoMostrado = document.getElementById('f_segundos');
+
+    const diaMostrado = document.getElementsByClassName('f_dias')[0];
+    const horaMostrado = document.getElementsByClassName('f_horas')[0];
+    const minutoMostrado = document.getElementsByClassName('f_minutos')[0];
+    const segundoMostrado = document.getElementsByClassName('f_segundos')[0];
+
+   
+    // const diaDado = document.getElementsByClassName('r-data'); //Input dado
     const diaDado = document.getElementById('r-data'); //Input dado
-    
+
     const diaAgora = new Date(); //Data do click
     const dataRecebida = new Date(diaDado.value);
+
     
     //Separando as grandezas do input
         // const diaGet= new Date(dataRecebida.getUTCDate());
@@ -34,8 +44,7 @@ botao.addEventListener('click', function (e) {
     const hourG = minuteG * 60;
     const dayG = hourG * 24;
     const yearG = dayG * 365;
-    
-    
+
     //Diferença da data de agora e data atual
     let faltaTotal = dataRecebida - diaAgora;
 
@@ -54,6 +63,14 @@ botao.addEventListener('click', function (e) {
         faltDiaM = 0
 
     }
+
+
+    diaMostrado.innerHTML = faltDiaM;
+    horaMostrado.innerHTML = faltHoraM;
+    minutoMostrado.innerHTML = faltaMin;
+    segundoMostrado.innerHTML = faltaSeg;
+
+    
 
 
     // let minDif = faltDiaM * 24 * 60 * 60 * 1000;
@@ -113,11 +130,18 @@ botao.addEventListener('click', function (e) {
                 horaMostrado.innerHTML = faltHoraM;
                 minutoMostrado.innerHTML = faltaMin;
                 segundoMostrado.innerHTML = faltaSeg;
+
+                console.log(faltDiaM)
+                console.log(faltHoraM)
+                console.log(faltaMin)
+                console.log(faltaSeg)
                     
             }
             
             
 }, true)
+
+}
 
 //________________________________________________________Terminto da solução____________________________________________________
     

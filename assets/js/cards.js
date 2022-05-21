@@ -8,7 +8,6 @@ let metas = 0;
 
 adTrab.addEventListener("click", function (e) {
     inicio.style.display = 'none';
-
     const cardNovo = document.createElement("form"); // Cria um novo elemento <>
     cardNovo.className = "card_ad"; // Define o atributo de identificação HTML
 
@@ -22,11 +21,11 @@ adTrab.addEventListener("click", function (e) {
                     <label for='tempo'>Qual o prazo?</label>\
                         <input class='card_ad__tempo' type='datetime-local' name='' id='r-data'>\
                         <input class='botao' type='submit' value='Começar!' id='botao' name='botao'>\
-                    <div><time id='f_dias'></time>\
-                        <time id='f_horas'></time>\
-                        <time id='f_minutos'></time>\
-                        <time id='f_segundos'></time>\
-                        </div>\
+                    <div><time class='f_dias'></time>\
+                        <time class='f_horas'></time>\
+                        <time class='f_minutos'></time>\
+                        <time class='f_segundos'></time>\
+                    </div>\
        "
     linha.appendChild(cardNovo);
 
