@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do List - Foco na meta</title>
+    <title>Quanto tempo falta?</title>
 
     <link rel="icon" type="imagem/jpeg" href="assets/img/relogio.png" />
 
@@ -39,18 +39,15 @@
                 <img class="logo" src="assets/img/Logo.png" alt="Logo representando tarefas">
             </h1>
             <h2>Suas metas</h2>
-
-
             <div class="cabecalho_slider">
                 <div class="cabecalho_slider__conteudo">
                     <div class="slider">
-                        <div class="slider_text1">Nunca desista, pois...</div>
-                        <div class="slider_text2">Vá em frente</div>
-                        <div class="slider_text3">Você consegue!</div>
+                        <div class="slider_text1">cada segundo, pois...</div>
+                        <div class="slider_text2">Aproveite tudo</div>
+                        <div class="slider_text3">O tempo passa</div>
                     </div>
                 </div>
             </div>
-
 
             <section>
                 <div class="cabecalho_hora">
@@ -68,47 +65,25 @@
                         <time id="ano"></time>
                     </div>
                 </div>
-
             </section>
         </div>
     </header>
 
     <main>
-        <section class="cards_container">
-            <div class="lateral">
-                <p class="lateral_frase">Suas metas</p>
-                <nav>
-                    <ul class="lateral_lista">
-                        <li>Trabalho <i id="maisTrabalho" class="fa-solid fa-circle-plus"></i></li>
-                        <li>Estudo <i id="maisEstudo" class="fa-solid fa-circle-plus"></i></li>
-                    </ul>
-                </nav>
-            </div>
-            <!--_______________________________INICIO____________________________________________-->
-            <div id="cards_centro" class="cards_centro">
-                <div>
-                    <p class="cards_inicio">Adicione suas metas</p>
-                    <p class="cards_iniciosub">Clicando na lateral esquerda</p>
-                </div>
-            </div>
-        </section>
-
         <!--_______________________________CardTrabalho____________________________________________-->
-        <section class="cards_container">
-            <div id="card_linhas" class="card_linhas">
-                <form class="card_ad">
-                    <input id='card_ad__titulo' class='card_ad__titulo' type='text' placeholder='Meta'>
-                    <label for='meta'>O que você vai fazer?</label>
-                    <textarea class='card_ad__inputs' id='meta' type='text' rows='4' cols='10'
-                        placeholder='Irei...'></textarea>
-                    <label for='tempo'>Qual o prazo?</label>
-
-                    <!-- <input class='card_ad__tempo' type='datetime-local' name='' id='r-data'> -->
-                    <input class='card_ad__tempo' type='datetime-local' name='' id='r-data-'>
-
-                    <input class="botao" type="submit" value="Começar!" id="botao" name="botao">
-
-                    <div>
+        <section class="contagem_container">
+            <div>
+                <form class="contagem">
+                    <h3>Quanto tempo falta?</h3>
+                    <p>Escolha uma data e horário para saber quanto tempo falta, com prcisão de até segundos!</p>
+                    <div class= contador>
+                        <label for='tempo' class="contador_titulo">Escolha</label>
+                        <!-- <input class='card_ad__tempo' type='datetime-local' name='' id='r-data'> -->
+                        <input class='card_ad__tempo' type='datetime-local' name='' id='r-data-'>
+                        <input class="botao" type="submit" value="Calcular!" id="botao" name="botao">
+                    </div>
+                        
+                    <div class="resultado">
                         <!-- <time id="f_dias"></time>
                         <time id="f_horas"></time>
                         <time id="f_minutos"></time>

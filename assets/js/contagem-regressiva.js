@@ -63,10 +63,10 @@ function comeca() {
 
     }
 
-    diaMostrado.innerHTML = faltDiaM;
-    horaMostrado.innerHTML = faltHoraM;
-    minutoMostrado.innerHTML = faltaMin;
-    segundoMostrado.innerHTML = faltaSeg;
+    diaMostrado.innerHTML = faltDiaM + ' dias';
+    horaMostrado.innerHTML = faltHoraM + ' horas';
+    minutoMostrado.innerHTML = faltaMin + ' minutos';
+    segundoMostrado.innerHTML = faltaSeg + ' segundos';
 
     
 
@@ -124,10 +124,10 @@ function comeca() {
             
                 } 
                 //Atribuição no HTML
-                diaMostrado.innerHTML = faltDiaM;
-                horaMostrado.innerHTML = faltHoraM;
-                minutoMostrado.innerHTML = faltaMin;
-                segundoMostrado.innerHTML = faltaSeg;
+                diaMostrado.innerHTML = faltDiaM + ' dias';
+                horaMostrado.innerHTML = faltHoraM + ' horas';
+                minutoMostrado.innerHTML = faltaMin + ' minutos';
+                segundoMostrado.innerHTML = faltaSeg + ' segundos';
 
                 console.log(faltDiaM)
                 console.log(faltHoraM)
