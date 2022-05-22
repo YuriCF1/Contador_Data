@@ -18,9 +18,8 @@ function comeca() {
     const minutoMostrado = document.getElementsByClassName('f_minutos')[0];
     const segundoMostrado = document.getElementsByClassName('f_segundos')[0];
 
-   
     // const diaDado = document.getElementsByClassName('r-data'); //Input dado
-    const diaDado = document.getElementById('r-data'); //Input dado
+    const diaDado = document.getElementById('r-data-'); //Input dado
 
     const diaAgora = new Date(); //Data do click
     const dataRecebida = new Date(diaDado.value);
@@ -63,7 +62,6 @@ function comeca() {
         faltDiaM = 0
 
     }
-
 
     diaMostrado.innerHTML = faltDiaM;
     horaMostrado.innerHTML = faltHoraM;
@@ -142,6 +140,10 @@ function comeca() {
 }, true)
 
 }
+
+
+
+
 
 //________________________________________________________Terminto da solução____________________________________________________
     
