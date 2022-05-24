@@ -14,7 +14,7 @@ body {
 }
 
 .logo {
-    height: 10vh;
+    height: 13vh;
     
 }
 
@@ -24,12 +24,12 @@ body {
 }
 
 .cabecalho_container > h2 {
-    font-size: 2rem;
+    font-size: 3rem;
 
 }
 
 .cabecalho_hora {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     display: flex;
     flex-direction: column;
     row-gap: 10px;

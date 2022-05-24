@@ -63,13 +63,42 @@ function comeca() {
 
     }
 
-    diaMostrado.innerHTML = faltDiaM + ' dias';
-    horaMostrado.innerHTML = faltHoraM + ' horas';
-    minutoMostrado.innerHTML = faltaMin + ' minutos';
-    segundoMostrado.innerHTML = faltaSeg + ' segundos';
+    var plural = 's'
+  
+    if (faltDiaM == 0) {
+        plural = ''
 
-    
+    }
+    if (faltHoraM == 0) {
+        plural = ''
 
+    }
+    if (faltaMin == 0) {
+        plural = ''
+
+    }
+    if (faltaSeg == 0) {
+        plural = ''
+
+    }
+
+    if (faltDiaM < 10 && faltDiaM > 0) {
+        faltDiaM = "0" + faltDiaM;
+    }
+    if (faltHoraM < 10 && faltHoraM > 0) {
+        faltHoraM = "0" + faltHoraM;
+    }
+    if (faltaMin < 10 && faltaMin > 0) {
+        faltaMin = "0" + faltaMin;
+    }
+    if (faltaSeg < 10 && faltaSeg > 0) {
+        faltaSeg = "0" + faltaSeg;
+    }
+
+    diaMostrado.innerHTML = faltDiaM + ' dia'+plural;
+    horaMostrado.innerHTML = faltHoraM + ' horas'+plural;
+    minutoMostrado.innerHTML = faltaMin + ' minutos'+plural;
+    segundoMostrado.innerHTML = faltaSeg + ' segundos'+plural;
 
     // let minDif = faltDiaM * 24 * 60 * 60 * 1000;
     // let faltMinM = Math.floor(faltaTotal / minuteG);
@@ -124,10 +153,10 @@ function comeca() {
             
                 } 
                 //Atribuição no HTML
-                diaMostrado.innerHTML = faltDiaM + ' dias';
-                horaMostrado.innerHTML = faltHoraM + ' horas';
-                minutoMostrado.innerHTML = faltaMin + ' minutos';
-                segundoMostrado.innerHTML = faltaSeg + ' segundos';
+                diaMostrado.innerHTML = faltDiaM + ' dia'+plural;
+                horaMostrado.innerHTML = faltHoraM + ' horas'+plural;
+                minutoMostrado.innerHTML = faltaMin + ' minutos'+plural;
+                segundoMostrado.innerHTML = faltaSeg + ' segundos'+plural;
 
                 console.log(faltDiaM)
                 console.log(faltHoraM)
@@ -135,8 +164,7 @@ function comeca() {
                 console.log(faltaSeg)
                     
             }
-            
-            
+             
 }, true)
 
 }

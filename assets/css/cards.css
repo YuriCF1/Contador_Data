@@ -3,14 +3,22 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: -850px;
+
+    }
     
-}
-
-
+    
 .contagem_container {
+    padding-top: 3rem;
     width: 80%;
     margin: 5rem auto;
     justify-content: space-around;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 15px );
+    -webkit-backdrop-filter: blur( 15px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
 }
 
 .contagem {
@@ -22,6 +30,11 @@ body {
     text-align: center;
     font-size: 1.8rem;
     margin-bottom: 2rem;
+
+}
+
+.contador input {
+    padding: 0.6rem;
 
 }
 
@@ -40,7 +53,7 @@ h3 {
 
 .contador_titulo {
     margin: 3rem;
-    font-size: 1.4rem;
+    font-size: 2rem;
 }
 
 .card_ad__tempo, .botao {
@@ -59,10 +72,11 @@ h3 {
     width: 25vw;
 }
 
-.resultado {
+.resultado  {
     color: rgb(36, 36, 36);
-    font-size: 1.65rem;
+    font-size: 2.65rem;
     font-weight: bolder;
+    width: 60vw;
 
 }
 
