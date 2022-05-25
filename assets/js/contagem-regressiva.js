@@ -63,21 +63,21 @@ function comeca() {
 
     }
 
-    var plural = 's'
+    let plural = 's'
   
-    if (faltDiaM == 0) {
+    if (faltDiaM < 10 ) {
         plural = ''
 
     }
-    if (faltHoraM == 0) {
+    if (faltHoraM < 10) {
         plural = ''
 
     }
-    if (faltaMin == 0) {
+    if (faltaMin < 10) {
         plural = ''
 
     }
-    if (faltaSeg == 0) {
+    if (faltaSeg < 10) {
         plural = ''
 
     }
@@ -85,7 +85,7 @@ function comeca() {
     if (faltDiaM < 10 && faltDiaM > 0) {
         faltDiaM = "0" + faltDiaM;
     }
-    if (faltHoraM < 10 && faltHoraM > 0) {
+    if (faltHoraM < 10  && faltHoraM > 0) {
         faltHoraM = "0" + faltHoraM;
     }
     if (faltaMin < 10 && faltaMin > 0) {
@@ -96,9 +96,9 @@ function comeca() {
     }
 
     diaMostrado.innerHTML = faltDiaM + ' dia'+plural;
-    horaMostrado.innerHTML = faltHoraM + ' horas'+plural;
-    minutoMostrado.innerHTML = faltaMin + ' minutos'+plural;
-    segundoMostrado.innerHTML = faltaSeg + ' segundos'+plural;
+    horaMostrado.innerHTML = faltHoraM + ' hora'+plural;
+    minutoMostrado.innerHTML = faltaMin + ' minuto'+plural;
+    segundoMostrado.innerHTML = faltaSeg + ' segundo'+plural;
 
     // let minDif = faltDiaM * 24 * 60 * 60 * 1000;
     // let faltMinM = Math.floor(faltaTotal / minuteG);
@@ -154,9 +154,9 @@ function comeca() {
                 } 
                 //Atribuição no HTML
                 diaMostrado.innerHTML = faltDiaM + ' dia'+plural;
-                horaMostrado.innerHTML = faltHoraM + ' horas'+plural;
-                minutoMostrado.innerHTML = faltaMin + ' minutos'+plural;
-                segundoMostrado.innerHTML = faltaSeg + ' segundos'+plural;
+                horaMostrado.innerHTML = faltHoraM + ' hora'+plural;
+                minutoMostrado.innerHTML = faltaMin + ' minuto'+plural;
+                segundoMostrado.innerHTML = faltaSeg + ' segundo'+plural;
 
                 console.log(faltDiaM)
                 console.log(faltHoraM)
@@ -168,10 +168,6 @@ function comeca() {
 }, true)
 
 }
-
-
-
-
 
 //________________________________________________________Terminto da solução____________________________________________________
     
