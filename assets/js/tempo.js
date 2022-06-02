@@ -1,10 +1,11 @@
 let data = new Date()
 
 function mostraHora() {
+    let data = new Date()
     let hora = data.getHours();
 
     if (hora < 10) {
-         hora = "0" + hora;
+        hora = "0" + hora;
      }
     
      let tempoAtual = hora;
@@ -92,5 +93,4 @@ function mostraTempo() {
     setInterval(mostraMes, 1000);
     setInterval(mostraAno, 1000);
     
-
 }

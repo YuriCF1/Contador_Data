@@ -53,61 +53,45 @@ function comeca() {
     let faltaMin = (minGet - minCliK) - 1;
     let faltaSeg = 60 - ((segGet - segCliK) * -1);
 
+    
     if (faltaMin < 0 ) {
         faltaMin  += 60;
-
+        
     }
-
+    
     if (faltDiaM <0 ) {
         faltDiaM = 0
-
+        
     }
+    
+    regressiva()
+    
+    // if (faltDiaM < 10 && faltDiaM > 0) {
+    //     faltDiaM = "0" + faltDiaM;
+    // }
+    // if (faltHoraM < 10  && faltHoraM > 0) {
+    //     faltHoraM = "0" + faltHoraM;
+    // }
+    // if (faltaMin < 10 && faltaMin > 0) {
+    //     faltaMin = "0" + faltaMin;
+    // }
+    // if (faltaSeg < 10 && faltaSeg > 0) {
+    //     faltaSeg = "0" + faltaSeg;
+    // }
 
-    let plural = 's'
-  
-    if (faltDiaM < 10 ) {
-        plural = ''
-
-    }
-    if (faltHoraM < 10) {
-        plural = ''
-
-    }
-    if (faltaMin < 10) {
-        plural = ''
-
-    }
-    if (faltaSeg < 10) {
-        plural = ''
-
-    }
-
-    if (faltDiaM < 10 && faltDiaM > 0) {
-        faltDiaM = "0" + faltDiaM;
-    }
-    if (faltHoraM < 10  && faltHoraM > 0) {
-        faltHoraM = "0" + faltHoraM;
-    }
-    if (faltaMin < 10 && faltaMin > 0) {
-        faltaMin = "0" + faltaMin;
-    }
-    if (faltaSeg < 10 && faltaSeg > 0) {
-        faltaSeg = "0" + faltaSeg;
-    }
-
-    diaMostrado.innerHTML = faltDiaM + ' dia'+plural;
-    horaMostrado.innerHTML = faltHoraM + ' hora'+plural;
-    minutoMostrado.innerHTML = faltaMin + ' minuto'+plural;
-    segundoMostrado.innerHTML = faltaSeg + ' segundo'+plural;
-
+    // diaMostrado.innerHTML = faltDiaM + pluralD;
+    // horaMostrado.innerHTML = faltHoraM + pluralH;
+    // minutoMostrado.innerHTML = faltaMin + pluralM;
+    // segundoMostrado.innerHTML = faltaSeg + pluralS;
+    
     // let minDif = faltDiaM * 24 * 60 * 60 * 1000;
     // let faltMinM = Math.floor(faltaTotal / minuteG);
-
-    console.log(faltDiaM + ' Dias')
-    console.log(faltHoraM + ' Horas')
-    console.log(faltaMin + ' Minutos')
-    console.log(faltaSeg + ' Segundos')
-
+    
+    // console.log(faltDiaM + ' Dias')
+    // console.log(faltHoraM + ' Horas')
+    // console.log(faltaMin + ' Minutos')
+    // console.log(faltaSeg + ' Segundos')
+    
     //Secao teste
     // let faltaDia = 0;
     // let faltaHora = 0;
@@ -117,17 +101,27 @@ function comeca() {
     // Loop regressivo
     
     let contagem;
-
+    
+    
+    function regressivaInicio() {
+        contagem = setInterval(regressiva, 1000); // ////////////////////////////////////////
+        
+    }
+    
     regressivaInicio();
-
-        function regressivaInicio() {
-               contagem = setInterval(regressiva, 1000);
-               
-            }
         
         //Condicoes regressivo
         function regressiva() {
-                
+            let pluralD = ' dia'
+            let pluralH = ' hora'
+            let pluralM = ' minuto'
+            let pluralS = ' segundo'
+
+            let zeroD;
+            let zeroH;
+            let zeroM;
+            let zeroS;
+
             if (faltaSeg > 0) {
                 faltaSeg -= 1;
                 
@@ -152,17 +146,50 @@ function comeca() {
                     clearInterval(contagem);
             
                 } 
-                //Atribuição no HTML
-                diaMostrado.innerHTML = faltDiaM + ' dia'+plural;
-                horaMostrado.innerHTML = faltHoraM + ' hora'+plural;
-                minutoMostrado.innerHTML = faltaMin + ' minuto'+plural;
-                segundoMostrado.innerHTML = faltaSeg + ' segundo'+plural;
 
+                if (faltDiaM > 1 ) {
+                    pluralD = ' dias'
+                    
+                }
+                if (faltHoraM > 1) {
+                    pluralH = ' horas'
+                    
+                }
+
+                if (faltaMin > 1) {
+                    pluralM = ' minutos'
+                    
+                }
+                if (faltaSeg > 1) {
+                    pluralS = ' segundos'
+                    
+                }
+
+                if (faltDiaM >= 10) {
+                zeroD = ''
+                } else zeroD = '0'
+                if (faltHoraM >= 10 ) {
+                    zeroH = ''
+                } else zeroH = '0'
+                if (faltaMin >= 10) {
+                    zeroM = ''
+                } else zeroM = '0'
+                if (faltaSeg >= 10) {
+                    zeroS = ''
+                } else zeroS = '0'
+                    
                 console.log(faltDiaM)
                 console.log(faltHoraM)
                 console.log(faltaMin)
-                console.log(faltaSeg)
-                    
+                console.log(faltaSeg)       
+
+                //Atribuição no HTML
+                
+                diaMostrado.innerHTML = zeroD + faltDiaM + pluralD;
+                horaMostrado.innerHTML = zeroH + faltHoraM + pluralH;
+                minutoMostrado.innerHTML = zeroM + faltaMin + pluralM;
+                segundoMostrado.innerHTML = zeroS + faltaSeg + pluralS;
+                
             }
              
 }, true)
