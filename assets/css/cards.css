@@ -89,6 +89,7 @@ h3 {
 .botao:hover {
     cursor: pointer;
     box-shadow: 5px 5px 8px 2px #151515;
+    transition: 0.4s;
 
 }
 
