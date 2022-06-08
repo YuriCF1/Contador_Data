@@ -18,6 +18,8 @@ Já que a contagem necessária é uma regressiva, então é estipulada uma data 
 - CSS
 - JavaScript
 
+### Deploy do projeto: https://yuricf1.github.io/Contador_Data/
+
 <img src="https://raw.githubusercontent.com/YuriCF1/Contador_Data/main/assets/img/Thumb.png" alt="imagem do site">
 
 ### Ajustes e melhorias
