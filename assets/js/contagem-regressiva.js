@@ -106,6 +106,7 @@ function comeca() {
         
         //Condicoes regressivo
         function regressiva() {
+            console.clear()
             let pluralD = ' dia'
             let pluralH = ' hora'
             let pluralM = ' minuto'
@@ -177,10 +178,11 @@ function comeca() {
                     zeroS = ''
                 } else zeroS = '0'
                     
-                console.log(faltDiaM)
-                console.log(faltHoraM)
-                console.log(faltaMin)
-                console.log(faltaSeg)       
+                console.log('Days' + faltDiaM)
+                console.log('Hours' + faltHoraM)
+                console.log('Minutes' + faltaMin)
+                console.log('Seconds' + faltaSeg)       
+                     
 
                 //Atribuição no HTML
                 
