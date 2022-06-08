@@ -59,11 +59,6 @@ function comeca() {
         
     }
     
-    if (faltDiaM <0 ) {
-        faltDiaM = 0
-        
-    }
-    
     regressiva()
     
     // if (faltDiaM < 10 && faltDiaM > 0) {
@@ -101,8 +96,7 @@ function comeca() {
     // Loop regressivo
     
     let contagem;
-    
-    
+
     function regressivaInicio() {
         contagem = setInterval(regressiva, 1000); // ////////////////////////////////////////
         
@@ -121,6 +115,11 @@ function comeca() {
             let zeroH;
             let zeroM;
             let zeroS;
+
+            if (faltDiaM <0 ) {
+                faltDiaM = 0
+        
+            }
 
             if (faltaSeg > 0) {
                 faltaSeg -= 1;
