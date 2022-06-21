@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quanto tempo falta?</title>
 
     <link rel="icon" type="imagem/jpeg" href="assets/img/hourglass.png" />
 
     <!--Fontes-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Dancing+Script&display=swap"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Dancing+Script&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- 
         font-family: 'Comfortaa', cursive;
@@ -21,81 +22,94 @@
         -->
 
     <!--CSS-->
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/cabecalho.css">
-    <link rel="stylesheet" href="assets/css/cabecalho_slider.css">
-    <link rel="stylesheet" href="assets/css/cards.css">
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/cabecalho.css" />
+    <link rel="stylesheet" href="assets/css/cabecalho_slider.css" />
+    <link rel="stylesheet" href="assets/css/cards.css" />
 
-    <script src="https://kit.fontawesome.com/9eaf1d90d0.js" crossorigin="anonymous"></script>
-    
-</head>
+    <script
+      src="https://kit.fontawesome.com/9eaf1d90d0.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body onload="mostraTempo(); comeca()">
+  <body onload="mostraTempo(); comeca()">
     <header>
-        <div class="cabecalho_container">
-            <h1>
-                <img class="logo" src="assets/img/calendario.png" alt="Logo representando tarefas">
-            </h1>
-            <h2>O tempo voa</h2>
-            <div class="cabecalho_slider">
-                <div class="cabecalho_slider__conteudo">
-                    <div class="slider">
-                        <div class="slider_text1">cada segundo, pois...</div>
-                        <div class="slider_text2">Aproveite tudo</div>
-                        <div class="slider_text3">O tempo passa</div>
-                    </div>
-                </div>
+      <div class="cabecalho_container">
+        <h1>
+          <img
+            class="logo"
+            src="assets/img/calendario.png"
+            alt="Logo representando tarefas"
+          />
+        </h1>
+        <h2>O tempo voa</h2>
+        <div class="cabecalho_slider">
+          <div class="cabecalho_slider__conteudo">
+            <div class="slider">
+              <div class="slider_text1">cada segundo, pois...</div>
+              <div class="slider_text2">Aproveite tudo</div>
+              <div class="slider_text3">O tempo passa</div>
             </div>
-
-            <section>
-                <div class="cabecalho_hora">
-                    <p>Hora e data atual</p>
-                    <div>
-                        <time id="hora"></time>
-                        <time id="min"></time>
-                        <time id="seg"></time>
-
-                    </div>
-                    <span>I</span>
-                    <div>
-                        <time id="dia"></time>
-                        <time id="mes"></time>
-                        <time id="ano"></time>
-                    </div>
-                </div>
-            </section>
+          </div>
         </div>
+
+        <section>
+          <div class="cabecalho_hora">
+            <p>Hora e data atual</p>
+            <div>
+              <time id="hora"></time>
+              <time id="min"></time>
+              <time id="seg"></time>
+            </div>
+            <span>I</span>
+            <div>
+              <time id="dia"></time>
+              <time id="mes"></time>
+              <time id="ano"></time>
+            </div>
+          </div>
+        </section>
+      </div>
     </header>
 
     <main>
-        <!--_______________________________CardTrabalho____________________________________________-->
-        <section class="contagem_container">
-            <div>
-                <form class="contagem">
-                    <h3>Quanto tempo está faltando?</h3>
-                    <p>Escolha uma data e horário futuro para saber quanto tempo falta, com precisão de até segundos!</p>
-                    <div class= contador>
-                        <label for='tempo' class="contador_titulo">Escolha</label>
-                        <!-- <input class='card_ad__tempo' type='datetime-local' name='' id='r-data'> -->
-                        <!-- Input dinâmico para definir o mínimo da data limite. Encontra-se no arquivo dataInput.js na pasta Assets-->
-                        <!-- Dinamic input to define the minimum value. It can be found in the file 'dataInput.js'  in the folder 'Assets'-->
-                        <div id="data">
-                        </div>
-                        <input class="botao" type="submit" value="Calcular!" id="botao" name="botao">
-                    </div>
-                        
-                    <div class="resultado">
-                        <time class="f_dias"></time>
-                        <time class="f_horas"></time>
-                        <time class="f_minutos"></time>
-                        <time class="f_segundos"></time>                    
-                    </div>   
-                </form> 
+      <!--_______________________________CardTrabalho____________________________________________-->
+      <section class="contagem_container">
+        <div>
+          <form class="contagem">
+            <h3>Quanto tempo está faltando?</h3>
+            <p>
+              Escolha uma data e horário futuro para saber quanto tempo falta,
+              com precisão de até segundos!
+            </p>
+            <div class="contador">
+              <label for="tempo" class="contador_titulo">Escolha</label>
+              <!-- <input class='card_ad__tempo' type='datetime-local' name='' id='r-data'> -->
+              <!-- Input dinâmico para definir o mínimo da data limite. Encontra-se no arquivo dataInput.js na pasta Assets-->
+              <!-- Dinamic input to define the minimum value. It can be found in the file 'dataInput.js'  in the folder 'Assets'-->
+              <div id="data"></div>
+              <input
+                class="botao"
+                type="submit"
+                value="Calcular!"
+                id="botao"
+                name="botao"
+              />
             </div>
-        </section>
+
+            <div class="resultado">
+              <time class="f_dias"></time>
+              <time class="f_horas"></time>
+              <time class="f_minutos"></time>
+              <time class="f_segundos"></time>
+            </div>
+          </form>
+        </div>
+      </section>
     </main>
     <script src="assets/js/dataInput.js"></script>
     <script src="assets/js/tempo.js"></script>
     <script src="assets/js/contagem-regressiva.js"></script>
-</body>
+  </body>
 </html>

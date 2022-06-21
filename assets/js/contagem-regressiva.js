@@ -1,5 +1,5 @@
 const botao = document.getElementById('botao');
-const contagem = document.getElementById('contagem');
+// const contagem = document.getElementById('contagem');
 
 // //______________________________Soluação encontrada_________________________________
 
