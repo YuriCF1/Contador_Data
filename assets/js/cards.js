@@ -7,6 +7,7 @@ let cont = 1;
 let metas = 0;
 //Chamadas
 
+//________Creates de container with the countdown__________
 adTrab.addEventListener("click", function (e) {
     inicio.style.display = 'none';
     const cardNovo = document.createElement("form"); // Cria um novo elemento <>
